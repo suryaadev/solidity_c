@@ -14,6 +14,8 @@ contract SimpleStorage{
 
     Person[] public peoples;
 
+    mapping(string => uint256) public nameToNumber;
+
     function store(uint256 _favNumber) public{
         favNumber = _favNumber;
     }
@@ -37,6 +39,9 @@ contract SimpleStorage{
         peoples.push(newPerson);*/
 
         peoples.push(Person(_number,_name));
+        nameToNumber[_name] = _number;
     }
 
 }
+
+// contract address : 0xCdA5dfd8b8Ae20AcEb27d998A0fb7bfe0f2Ca985
